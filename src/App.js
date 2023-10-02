@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Hosp from "./Hosp";
 import axios from "axios";
+import Select from "react-select";
 
 function App() {
     const [loading, setLoading] = useState(true);
@@ -28,6 +29,60 @@ function App() {
         console.log(params);
         setClickSigun(params);
     };
+
+    const [selectedOption, setSelectedOption] = useState(null);
+    const options = [
+        { value: "", label: "--전체보기--" },
+        { value: "고양시", label: "고양시" },
+        { value: "광명시", label: "광명시" },
+        { value: "광주시", label: "광주시" },
+        { value: "구리시", label: "구리시" },
+        { value: "군포시", label: "군포시" },
+        { value: "김포시", label: "김포시" },
+        { value: "남양주시", label: "남양주시" },
+        { value: "부천시", label: "부천시" },
+        { value: "성남시", label: "성남시" },
+        { value: "수원시", label: "수원시" },
+        { value: "시흥시", label: "시흥시" },
+        { value: "안산시", label: "안산시" },
+        { value: "안성시", label: "안성시" },
+        { value: "안양시", label: "안양시" },
+        { value: "양평군", label: "양평군" },
+        { value: "여주시", label: "여주시" },
+        { value: "연천군", label: "연천군" },
+        { value: "오산시", label: "오산시" },
+        { value: "용인시", label: "용인시" },
+        { value: "의왕시", label: "의왕시" },
+        { value: "의정부시", label: "의정부시" },
+        { value: "이천시", label: "이천시" },
+        { value: "파주시", label: "파주시" },
+        { value: "평택시", label: "평택시" },
+        { value: "포천시", label: "포천시" },
+        { value: "화성시", label: "화성시" },
+    ];
+
+    // const SelectBox = (props) => {
+    //     const handleChange = (e) => {
+    //         // event handler
+    //         e.preventDefault();
+    //         console.log(e.target.value);
+    //         setClickSigun(e.target.value);
+    //     };
+
+    //     return (
+    //         <select onChange={handleChange}>
+    //             {props.options.map((option) => (
+    //                 <option
+    //                     key={option.value}
+    //                     value={option.value}
+    //                     defaultValue={props.defaultValue === option.value}
+    //                 >
+    //                     {option.label}
+    //                 </option>
+    //             ))}
+    //         </select>
+    //     );
+    // };
 
     return (
         <section className="container">
