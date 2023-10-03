@@ -1,4 +1,8 @@
 import React, { useEffect } from "react";
+import "./style.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { CopyToClipboard } from "react-copy-to-clipboard/src";
 
 const { kakao } = window;
 
@@ -30,30 +34,41 @@ function Hosp({
     // }, []);
 
     return (
-        <div>
-            {SIGUN_NM}
-            <br />
-            {MEDCARE_INST_NM}
-            <br />
-            {DISTRCT_DIV_NM}
-            <br />
-            지번주소:
-            {REFINE_LOTNO_ADDR}
-            <br />
-            도로명주소: {REFINE_ROADNM_ADDR}
-            <br />
-            대표전화번호: {REPRSNT_TELNO}
-            <br />
-            응급센터전화번호: {EMGNCY_CENTER_TELNO}
-            <br />
-            <a
-                target="_blank"
-                href={`https://map.naver.com/p/search/${REFINE_ROADNM_ADDR}`}
-            >
-                지도보기
-            </a>
-            <br />
-            <br />
+        <div className="hosp_wrap">
+            <div>
+                {SIGUN_NM} {DISTRCT_DIV_NM}
+                <div className="hosp_name">{MEDCARE_INST_NM}</div>
+                <div>
+                    <div className="hosp_add">
+                        지번 <div>{REFINE_LOTNO_ADDR}</div>
+                    </div>
+                    <div className="hosp_add">
+                        도로명 <div>{REFINE_ROADNM_ADDR}</div>
+                    </div>
+                </div>
+                <div className="hosp_tel">
+                    Tel. {REPRSNT_TELNO}
+                    <br />
+                    Emerg center Tel. {EMGNCY_CENTER_TELNO}
+                </div>
+            </div>
+            <div className="hosp_url">
+                <div>
+                    <CopyToClipboard
+                        className="copy"
+                        text={REPRSNT_TELNO}
+                        onCopy={() => alert("번호가 복사되었습니다.")}
+                    >
+                        <text>번호 복사</text>
+                    </CopyToClipboard>
+                </div>
+                <a
+                    target="_blank"
+                    href={`https://map.naver.com/p/search/${REFINE_ROADNM_ADDR}`}
+                >
+                    지도보기 <FontAwesomeIcon icon={faChevronRight} />
+                </a>
+            </div>
         </div>
     );
 }

@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+        format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+.hosp {
+    /* font-family: "Pretendard-Regular"; */
+    font-weight: 300;
+}
+.sigun_button {
+    margin: 30px auto;
+    text-align: center;
+}
+.hosp_wrap {
+    width: 500px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.hosp_name {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0;
+}
+.hosp_add {
+    display: flex;
+    flex-direction: row;
+    color: rgb(170, 170, 170);
+    /* justify-content: space-between; */
+}
+.hosp_add div {
+    margin-left: 10px;
+    color: black;
+}
+.hosp_tel {
+    margin-top: 10px;
+}
+.hosp_url {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    align-items: flex-end;
+}
+.hosp_url a {
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    color: inherit; /* 링크의 색상 제거 */
+    margin-top: 5px;
+    transition: ease 0.3s;
+}
+.hosp_url a:hover {
+    text-decoration: underline;
+}
+.hosp_url div:hover,
+div:focus {
+    cursor: default;
+    transition: ease 0.3s;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(
+        150deg,
+        #e57676,
+        #eda274 10%,
+        #d7b34f 33%,
+        #79b763 45%,
+        #77a9e6 50%,
+        #6464ba 66%,
+        #a084e0 82%,
+        #f087cf
+    );
+    background-size: 100% 300%;
+    background-position-y: 0%;
+    animation: gradient 2s ease-in-out forwards infinite;
+}
+
+@keyframes gradient {
+    from {
+        background-position-y: 0%;
+    }
+    to {
+        background-position-y: 150%;
+    }
+}
+
+@keyframes rainbowLink {
+    0% {
+        color: #e57676;
+    }
+    15% {
+        color: #eda274;
+    }
+    30% {
+        color: #d7b34f;
+    }
+    45% {
+        color: #79b763;
+    }
+    60% {
+        color: #77a9e6;
+    }
+    75% {
+        color: #6464ba;
+    }
+    90% {
+        color: #a084e0;
+    }
+    100% {
+        color: #d891e0;
+    }
+}
+
+@media all and (min-width: 1024px) {
+    /* 데스크탑 */
+    .sigun_button {
+        width: 700px;
+    }
+}
+@media all and (max-width: 1024px) {
+    /* 태블릿 */
+    .sigun_button {
+        width: 70%;
+    }
+}
+@media all and (max-width: 768px) {
+    /* 모바일 */
+    /* .sigun_button {
+        width: 700px;
+    } */
+}
